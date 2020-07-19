@@ -97,10 +97,11 @@ int ruv_generate(ruv_buffer_t *buffer, int ndimensions, double vector[])
     int error, i;
     double A, B;    /* uniform random variables */
     double radius, angle;
-    double sum = 0.0;
+    double sum;
 
     do
     {
+        sum = 0.0;
         for (i=0; i < ndimensions; i += 2)
         {
             CHECK(ruv_uniform(buffer, &A));
