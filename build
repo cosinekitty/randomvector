@@ -1,0 +1,13 @@
+#/bin/bash
+
+if [[ "$1" == "debug" ]]; then
+    BUILDOPT='-g -O0'
+elif [[ -z "$1" ]]; then
+    BUILDOPT='-O3'
+else
+    echo "FATAL(run): unrecognized command line option"
+    exit 1
+fi
+
+gcc ${BUILDOPT} -o rvtest -Wall -Werror rvtest.c randomvector.c -lm || exit $?
+exit 0

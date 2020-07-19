@@ -1,0 +1,4 @@
+#!/bin/bash
+./build $1 || exit $?
+./rvtest || exit $?
+exit 0
